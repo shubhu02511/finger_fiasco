@@ -41,11 +41,13 @@ html, body {
   margin: 0;
   font-weight: 800;
   letter-spacing: 0.3px;
+  font-size: clamp(24px, 4vw, 44px);
 }
 
 .subtitle {
   margin: 6px 0 0;
   color: var(--muted);
+  font-size: clamp(14px, 2vw, 18px);
 }
 
 .controls {
@@ -134,10 +136,10 @@ select {
 .words {
   min-height: 110px;
   /* Limit visible area so the input stays in view */
-  max-height: 120px;
+  max-height: clamp(110px, 28vh, 180px);
   overflow-y: auto;
-  line-height: 36px;
-  font-size: 22px;
+  line-height: 1.6;
+  font-size: clamp(18px, 2.2vw, 22px);
   letter-spacing: 0.2px;
 }
 
@@ -172,7 +174,7 @@ select {
   color: var(--text);
   padding: 14px 16px;
   border-radius: 12px;
-  font-size: 18px;
+  font-size: clamp(16px, 2.3vw, 18px);
 }
 
 .footer {
@@ -195,8 +197,22 @@ select {
   opacity: 0.9;
 }
 
+/* Medium screens */
+@media (max-width: 1024px) {
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Small screens */
 @media (max-width: 720px) {
   .controls { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .header-inner { padding: 20px 0 16px; }
+}
+
+/* Extra-small phones */
+@media (max-width: 480px) {
+  .container { padding: 0 12px; }
+  .actions { flex-wrap: wrap; }
+  .btn { flex: 1 1 48%; }
 }
 
