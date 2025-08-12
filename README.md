@@ -16,20 +16,20 @@ Pick one of the options below.
 
 ### Option A: Open directly (no server)
 1. Download/clone the project.
-2. Open `home.html` in your browser.
+2. Open `index.html` in your browser.
 
 ### Option B: Run a local server (optional)
 Python:
 ```powershell
 python -m http.server 8000
 ```
-Open `http://localhost:8000/home.html`.
+Open `http://localhost:8000/`.
 
 Node (npx):
 ```powershell
 npx serve -l 8000
 ```
-Open `http://localhost:8000/home.html`.
+Open `http://localhost:8000/`.
 
 ## How to play
 1. Select duration and difficulty.
@@ -40,7 +40,7 @@ Open `http://localhost:8000/home.html`.
 ## Project structure
 ```
 finger/
-  home.html   # App markup and script/style includes
+  index.html  # App markup and script/style includes
   style.css   # Theme and layout
   script.js   # Game logic, word generation, HUD, timers
 ```
