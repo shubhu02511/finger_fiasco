@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Finger Fiasco – Inspired Typing Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container header-inner">
+        <h1 class="title">Finger Fiasco</h1>
+        <p class="subtitle">A fast-paced typing challenge inspired by the original game.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="controls">
+        <div class="control">
+          <label for="durationSelect">Duration</label>
+          <select id="durationSelect">
+            <option value="30">30s</option>
+            <option value="60" selected>60s</option>
+            <option value="120">120s</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="difficultySelect">Difficulty</label>
+          <select id="difficultySelect">
+            <option value="easy" selected>Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <div class="actions">
+          <button id="startButton" class="btn primary">Start</button>
+          <button id="restartButton" class="btn" disabled>Restart</button>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="stat">
+          <div class="stat-label">Time</div>
+          <div id="timerValue" class="stat-value">60</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">WPM</div>
+          <div id="wpmValue" class="stat-value">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Accuracy</div>
+          <div id="accuracyValue" class="stat-value">100%</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Score</div>
+          <div id="scoreValue" class="stat-value">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Best</div>
+          <div id="bestValue" class="stat-value">0 WPM</div>
+        </div>
+      </section>
+
+      <section class="game">
+        <div id="wordsContainer" class="words" aria-live="polite"></div>
+        <input
+          id="inputField"
+          class="input"
+          type="text"
+          placeholder="Type the word here and press space…"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          disabled
+        />
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <p>
+        Contact: 
+        <a href="tel:7752993275">7752993275</a> · 
+        <a href="https://www.linkedin.com/in/shubham-chaurasiya-5a64812b2/" target="_blank" rel="noreferrer">LinkedIn</a> · 
+        <a href="mailto:shubhamchaurasiya095@gmail.com">shubhamchaurasiya095@gmail.com</a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
