@@ -58,3 +58,6 @@ finger/
 - Phone: `7752993275`
 - LinkedIn: https://www.linkedin.com/in/shubham-chaurasiya-5a64812b2/
 - Email: shubhamchaurasiya095@gmail.com
+
+
+#start .\index.html

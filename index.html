@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1020" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f9ff" />
     <title>Finger Fiasco – Inspired Typing Game</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,8 +15,17 @@
   <body>
     <header class="app-header">
       <div class="container header-inner">
-        <h1 class="title">Finger Fiasco</h1>
-        <p class="subtitle">A fast-paced typing challenge inspired by the original game.</p>
+        <div class="brand">
+          <h1 class="title">Finger Fiasco</h1>
+          <p class="subtitle">A fast-paced typing challenge inspired by the original game.</p>
+        </div>
+        <div id="headerActions" class="header-actions">
+          <div id="avatar" class="avatar" hidden aria-hidden="true"></div>
+          <input id="avatarFileInput" type="file" accept="image/*" hidden />
+          <span id="userDisplay" class="user-display" aria-live="polite"></span>
+          <button id="loginButton" class="btn" aria-label="Login">Login</button>
+          <button id="logoutButton" class="btn" aria-label="Logout" hidden>Logout</button>
+        </div>
       </div>
     </header>
 
@@ -38,6 +50,7 @@
         <div class="actions">
           <button id="startButton" class="btn primary">Start</button>
           <button id="restartButton" class="btn" disabled>Restart</button>
+          <button id="themeToggle" class="btn" aria-pressed="false" title="Toggle theme" aria-label="Toggle theme">☀️</button>
         </div>
       </section>
 
@@ -97,6 +110,63 @@
         </a>
       </p>
     </footer>
+
+    <!-- AUTH MODAL -->
+    <div id="authModal" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <div class="modal-backdrop"></div>
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <div class="tabs">
+            <button id="tabLogin" class="tab active" aria-selected="true">Login</button>
+            <button id="tabCreate" class="tab" aria-selected="false">Create Account</button>
+          </div>
+          <button id="modalClose" class="btn" aria-label="Close">✕</button>
+        </div>
+        <div class="modal-body">
+          <!-- Login Content -->
+          <div class="login-contents">
+            <div class="split">
+              <div class="panel">
+                <h3 class="panel-title">1‑Click Login</h3>
+                <button class="btn social fb" id="loginFacebook">Facebook Login</button>
+                <button class="btn social google" id="loginGoogle">Google Login</button>
+              </div>
+              <div class="panel">
+                <h3 class="panel-title" id="authTitle">Email Login</h3>
+                <label class="label" for="emailInput">Email</label>
+                <input id="emailInput" class="input" type="email" placeholder="Email" />
+                <label class="label" for="passwordInput">Password</label>
+                <input id="passwordInput" class="input" type="password" placeholder="Password" />
+                <button id="emailLoginBtn" class="btn primary" style="margin-top:12px;">Login</button>
+                <a id="forgotLink" href="#" class="muted-link" style="display:inline-block;margin-top:10px;">Forgot your Password?</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Create Account Content -->
+          <div class="create-contents" hidden>
+            <div class="split">
+              <div class="panel">
+                <h3 class="panel-title">Why create an account?</h3>
+                <p class="subtitle" style="margin:0">Save your best WPM and preferences across sessions and devices.</p>
+              </div>
+              <div class="panel">
+                <h3 class="panel-title">Create Account</h3>
+                <label class="label" for="caName">Full Name</label>
+                <input id="caName" class="input" type="text" placeholder="Your name" />
+                <label class="label" for="caEmail">Email</label>
+                <input id="caEmail" class="input" type="email" placeholder="you@example.com" />
+                <label class="label" for="caPassword">Password</label>
+                <input id="caPassword" class="input" type="password" placeholder="At least 6 characters" />
+                <label class="label" for="caPassword2">Confirm Password</label>
+                <input id="caPassword2" class="input" type="password" placeholder="Re-enter password" />
+                <button id="createAccountBtn" class="btn primary" style="margin-top:12px;">Create Account</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
